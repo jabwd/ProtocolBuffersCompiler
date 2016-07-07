@@ -21,16 +21,20 @@ class ProtobufSwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDecoder() {
+        let decoder = Decoder()
+        
+        let testBuffer = NSData(base64EncodedString: "AAAAAAAAAAAKEWFkbWluQGV4dXJpb24uY29tEgYyMTIxMjEqIFzDetAVTk8kmJamRkdOGPpwCbFCjJDbZVa8DMdTMock", options: [])!
+        
+        let result = decoder.decode(testBuffer.subdataWithRange(NSMakeRange(8, testBuffer.length-8)))
+        print("\(result)")
     }
     
-    func testPerformanceExample() {
+    /*func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
-    }
+    }*/
     
 }

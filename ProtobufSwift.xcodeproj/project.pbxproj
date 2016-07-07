@@ -13,6 +13,9 @@
 		36A042CD1D2E4F34007B8216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A042CC1D2E4F34007B8216 /* Assets.xcassets */; };
 		36A042D01D2E4F34007B8216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A042CE1D2E4F34007B8216 /* LaunchScreen.storyboard */; };
 		36A042DB1D2E4F34007B8216 /* ProtobufSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042DA1D2E4F34007B8216 /* ProtobufSwiftTests.swift */; };
+		36A042ED1D2E4FCB007B8216 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042EC1D2E4FCB007B8216 /* Decoder.swift */; };
+		36A042F01D2E5399007B8216 /* NSDataAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042EF1D2E5399007B8216 /* NSDataAdditions.swift */; };
+		36A042F21D2E5A91007B8216 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042F11D2E5A91007B8216 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		36A042D61D2E4F34007B8216 /* ProtobufSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtobufSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A042DA1D2E4F34007B8216 /* ProtobufSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufSwiftTests.swift; sourceTree = "<group>"; };
 		36A042DC1D2E4F34007B8216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A042EC1D2E4FCB007B8216 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = ProtocolBuffers/Decoder/Decoder.swift; sourceTree = "<group>"; };
+		36A042EF1D2E5399007B8216 /* NSDataAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDataAdditions.swift; path = ProtocolBuffers/Helpers/NSDataAdditions.swift; sourceTree = "<group>"; };
+		36A042F11D2E5A91007B8216 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = ProtocolBuffers/Helpers/Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		36A042C41D2E4F34007B8216 /* ProtobufSwift */ = {
 			isa = PBXGroup;
 			children = (
+				36A042E51D2E4F47007B8216 /* ProtocolBuffers */,
 				36A042C51D2E4F34007B8216 /* AppDelegate.swift */,
 				36A042C71D2E4F34007B8216 /* ViewController.swift */,
 				36A042C91D2E4F34007B8216 /* Main.storyboard */,
@@ -94,6 +101,40 @@
 				36A042DC1D2E4F34007B8216 /* Info.plist */,
 			);
 			path = ProtobufSwiftTests;
+			sourceTree = "<group>";
+		};
+		36A042E51D2E4F47007B8216 /* ProtocolBuffers */ = {
+			isa = PBXGroup;
+			children = (
+				36A042EE1D2E5387007B8216 /* Helpers */,
+				36A042EB1D2E4FB6007B8216 /* Encoder */,
+				36A042EA1D2E4FB2007B8216 /* Decoder */,
+			);
+			name = ProtocolBuffers;
+			sourceTree = "<group>";
+		};
+		36A042EA1D2E4FB2007B8216 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				36A042EC1D2E4FCB007B8216 /* Decoder.swift */,
+			);
+			name = Decoder;
+			sourceTree = "<group>";
+		};
+		36A042EB1D2E4FB6007B8216 /* Encoder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Encoder;
+			sourceTree = "<group>";
+		};
+		36A042EE1D2E5387007B8216 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				36A042EF1D2E5399007B8216 /* NSDataAdditions.swift */,
+				36A042F11D2E5A91007B8216 /* Types.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A042C81D2E4F34007B8216 /* ViewController.swift in Sources */,
+				36A042ED1D2E4FCB007B8216 /* Decoder.swift in Sources */,
+				36A042F01D2E5399007B8216 /* NSDataAdditions.swift in Sources */,
+				36A042F21D2E5A91007B8216 /* Types.swift in Sources */,
 				36A042C61D2E4F34007B8216 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
