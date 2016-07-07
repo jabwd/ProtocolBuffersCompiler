@@ -36,6 +36,13 @@ struct Key
             type = .invalid
         }
     }
+    
+    init(type: WireType, number: UInt32)
+    {
+        self.value = 0
+        self.type = type
+        self.fieldNumber = number
+    }
 }
 
 struct Value: CustomStringConvertible
@@ -43,6 +50,13 @@ struct Value: CustomStringConvertible
     let key: Key
     var value: Any?
     var length: Int
+    
+    init(value: Any?, Type: WireType, fieldNumber: UInt32)
+    {
+        self.key = Key(type: Type, number: fieldNumber)
+        self.value = value
+        self.length = 0
+    }
     
     init(key: Key, data: NSData)
     {
