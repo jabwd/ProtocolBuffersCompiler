@@ -28,6 +28,19 @@ class ProtobufSwiftTests: XCTestCase {
         
         let result = decoder.decode(testBuffer.subdataWithRange(NSMakeRange(8, testBuffer.length-8)))
         print("\(result)")
+        
+        var toEncode = [Value]()
+        for (_, value) in result {
+            toEncode.append(value)
+        }
+        
+        let data = Encoder.shared.encode(toEncode)
+        
+        print("Begin: \(testBuffer)")
+        print("Encod: \(data)")
+        
+        let newResult = Decoder.shared.decode(data)
+        print("New result: \(newResult)")
     }
     
     /*func testPerformanceExample() {

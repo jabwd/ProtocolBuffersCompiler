@@ -27,6 +27,7 @@ struct Key
     
     init(value: UInt32)
     {
+        print("Key value: \(value)")
         self.value = value
         fieldNumber = ((value) ^ 0x00000007) >> 3
         if let newType = WireType(rawValue: UInt8((value & 0x00000007))) {
@@ -37,7 +38,7 @@ struct Key
     }
 }
 
-struct Value
+struct Value: CustomStringConvertible
 {
     let key: Key
     var value: Any?
@@ -95,5 +96,9 @@ struct Value
             print("[\(self.dynamicType)] Unhandled WireType: \(key.type) ( Probably a deprecated value )")
             break
         }
+    }
+    
+    var description: String {
+        return "[ProtoValue type:\(key.type) value:\(value)]"
     }
 }

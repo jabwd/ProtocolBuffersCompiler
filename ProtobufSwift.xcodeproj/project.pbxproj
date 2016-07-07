@@ -16,6 +16,7 @@
 		36A042ED1D2E4FCB007B8216 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042EC1D2E4FCB007B8216 /* Decoder.swift */; };
 		36A042F01D2E5399007B8216 /* NSDataAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042EF1D2E5399007B8216 /* NSDataAdditions.swift */; };
 		36A042F21D2E5A91007B8216 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042F11D2E5A91007B8216 /* Types.swift */; };
+		36A042F41D2E6D0B007B8216 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A042F31D2E6D0B007B8216 /* Encoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		36A042EC1D2E4FCB007B8216 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = ProtocolBuffers/Decoder/Decoder.swift; sourceTree = "<group>"; };
 		36A042EF1D2E5399007B8216 /* NSDataAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDataAdditions.swift; path = ProtocolBuffers/Helpers/NSDataAdditions.swift; sourceTree = "<group>"; };
 		36A042F11D2E5A91007B8216 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = ProtocolBuffers/Helpers/Types.swift; sourceTree = "<group>"; };
+		36A042F31D2E6D0B007B8216 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = ProtocolBuffers/Encoder/Encoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		36A042EB1D2E4FB6007B8216 /* Encoder */ = {
 			isa = PBXGroup;
 			children = (
+				36A042F31D2E6D0B007B8216 /* Encoder.swift */,
 			);
 			name = Encoder;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				36A042C81D2E4F34007B8216 /* ViewController.swift in Sources */,
 				36A042ED1D2E4FCB007B8216 /* Decoder.swift in Sources */,
+				36A042F41D2E6D0B007B8216 /* Encoder.swift in Sources */,
 				36A042F01D2E5399007B8216 /* NSDataAdditions.swift in Sources */,
 				36A042F21D2E5A91007B8216 /* Types.swift in Sources */,
 				36A042C61D2E4F34007B8216 /* AppDelegate.swift in Sources */,

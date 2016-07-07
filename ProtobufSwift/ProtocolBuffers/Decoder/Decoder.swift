@@ -10,6 +10,8 @@ import Foundation
 
 class Decoder
 {
+    static let shared: Decoder = Decoder()
+    
     init()
     {
         
