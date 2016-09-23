@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EXProtubuf.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ProtobufSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>368C59F51D4B92FC00DAF6B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>36A042C11D2E4F34007B8216</key>
 		<dict>
 			<key>primary</key>

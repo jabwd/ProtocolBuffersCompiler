@@ -17,7 +17,7 @@ class Encoder
         
     }
     
-    func encode(storage: [Value]) -> NSData
+    func encode(_ storage: [Value]) -> Data
     {
         let buffer = NSMutableData(length: 0)!
         
@@ -31,25 +31,25 @@ class Encoder
             switch(value.key.type) {
             case .varint:
                 guard let rawValue = value.value as? UInt64 else {
-                    print("[\(self.dynamicType)] Unable to encode \(value)")
+                    print("[\(type(of: self))] Unable to encode \(value)")
                     continue
                 }
                 encodeVarInt(rawValue, buffer: buffer)
                 break
                 
             case .packed:
-                if let dataRep = value.value as? NSData {
+                if let dataRep = value.value as? Data {
                     encodeData(dataRep, buffer: buffer)
                 } else if let strRep = value.value as? String {
                     encodeString(strRep, buffer: buffer)
                 } else {
-                    print("[\(self.dynamicType)] Unable to encode \(value)")
+                    print("[\(type(of: self))] Unable to encode \(value)")
                 }
                 break
                 
             case .fixed32:
                 guard let fixed = value.value as? UInt32 else {
-                    print("[\(self.dynamicType)] Unable to encode \(value)")
+                    print("[\(type(of: self))] Unable to encode \(value)")
                     continue
                 }
                 encodeFixed32(fixed, buffer: buffer)
@@ -57,23 +57,23 @@ class Encoder
                 
             case .fixed64:
                 guard let fixed = value.value as? UInt64 else {
-                    print("[\(self.dynamicType)] Unable to encode \(value)")
+                    print("[\(type(of: self))] Unable to encode \(value)")
                     continue
                 }
                 encodeFixed64(fixed, buffer: buffer)
                 break
                 
             default:
-                print("[\(self.dynamicType)] Does not yet encode values of type: \(value.key.type)")
+                print("[\(type(of: self))] Does not yet encode values of type: \(value.key.type)")
                 break
             }
         }
         
-        return buffer
+        return buffer as Data
     }
 }
 
-func encodeVarInt(value: UInt64, buffer: NSMutableData)
+func encodeVarInt(_ value: UInt64, buffer: NSMutableData)
 {
     var n: UInt64 = value
     repeat {
@@ -82,34 +82,34 @@ func encodeVarInt(value: UInt64, buffer: NSMutableData)
         if( next != 0 ) {
             tmp = tmp + 0x80;
         }
-        buffer.appendBytes(&tmp, length: 1)
+        buffer.append(&tmp, length: 1)
         n = next;
     } while( n != 0 )
 }
 
-func encodeFixed64(value: UInt64, buffer: NSMutableData)
+func encodeFixed64(_ value: UInt64, buffer: NSMutableData)
 {
     var v = value
-    buffer.appendBytes(&v, length: sizeof(UInt64))
+    buffer.append(&v, length: MemoryLayout<UInt64>.size)
 }
 
-func encodeFixed32(value: UInt32, buffer: NSMutableData)
+func encodeFixed32(_ value: UInt32, buffer: NSMutableData)
 {
     var v = value
-    buffer.appendBytes(&v, length: sizeof(UInt32))
+    buffer.append(&v, length: MemoryLayout<UInt32>.size)
 }
 
-func encodeString(value: String, buffer: NSMutableData)
+func encodeString(_ value: String, buffer: NSMutableData)
 {
-    guard let strData = value.dataUsingEncoding(NSUTF8StringEncoding) else {
+    guard let strData = value.data(using: String.Encoding.utf8) else {
         return
     }
-    encodeVarInt(UInt64(strData.length), buffer: buffer)
-    buffer.appendData(strData)
+    encodeVarInt(UInt64(strData.count), buffer: buffer)
+    buffer.append(strData)
 }
 
-func encodeData(data: NSData, buffer: NSMutableData)
+func encodeData(_ data: Data, buffer: NSMutableData)
 {
-    encodeVarInt(UInt64(data.length), buffer: buffer)
-    buffer.appendData(data)
+    encodeVarInt(UInt64(data.count), buffer: buffer)
+    buffer.append(data)
 }

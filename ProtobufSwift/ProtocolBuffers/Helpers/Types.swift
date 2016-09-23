@@ -58,7 +58,7 @@ struct Value: CustomStringConvertible
         self.length = 0
     }
     
-    init(key: Key, data: NSData)
+    init(key: Key, data: Data)
     {
         self.key = key
         self.length = 0
@@ -76,14 +76,14 @@ struct Value: CustomStringConvertible
             
         case .fixed64:
             var result: UInt64 = 0
-            data.getBytes(&result, length: 8)
+            (data as NSData).getBytes(&result, length: 8)
             value = UInt64(result)
             length = 8
             break
             
         case .fixed32:
             var result: UInt32 = 0
-            data.getBytes(&result, length: 4)
+            (data as NSData).getBytes(&result, length: 4)
             value = UInt32(result)
             length = 4
             break
@@ -91,9 +91,10 @@ struct Value: CustomStringConvertible
         case .packed:
             let result = readVarInt(data)
             let dataLen = Int(result.value)
-            if( dataLen > 0 && data.length >= dataLen ) {
-                let packedData = data.subdataWithRange(NSMakeRange(result.length, dataLen))
-                let stringValue = String(data: packedData, encoding: NSUTF8StringEncoding)
+            if( dataLen > 0 && data.count >= dataLen ) {
+                let range = Range(uncheckedBounds: (lower: result.length, upper: dataLen))
+                let packedData = data.subdata(in: range)
+                let stringValue = String(data: packedData, encoding: String.Encoding.utf8)
                 length = dataLen+result.length
                 if( stringValue != nil ) {
                     value = stringValue
@@ -107,7 +108,7 @@ struct Value: CustomStringConvertible
             break
             
         default:
-            print("[\(self.dynamicType)] Unhandled WireType: \(key.type) ( Probably a deprecated value )")
+            print("[\(type(of: self))] Unhandled WireType: \(key.type) ( Probably a deprecated value )")
             break
         }
     }

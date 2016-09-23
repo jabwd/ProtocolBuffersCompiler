@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36A042C11D2E4F34007B8216"
-               BuildableName = "ProtobufSwift.app"
-               BlueprintName = "ProtobufSwift"
+               BlueprintIdentifier = "368C59F51D4B92FC00DAF6B5"
+               BuildableName = "EXProtubuf.framework"
+               BlueprintName = "EXProtubuf"
                ReferencedContainer = "container:ProtobufSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36A042D51D2E4F34007B8216"
-               BuildableName = "ProtobufSwiftTests.xctest"
-               BlueprintName = "ProtobufSwiftTests"
-               ReferencedContainer = "container:ProtobufSwift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36A042C11D2E4F34007B8216"
-            BuildableName = "ProtobufSwift.app"
-            BlueprintName = "ProtobufSwift"
-            ReferencedContainer = "container:ProtobufSwift.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36A042C11D2E4F34007B8216"
-            BuildableName = "ProtobufSwift.app"
-            BlueprintName = "ProtobufSwift"
+            BlueprintIdentifier = "368C59F51D4B92FC00DAF6B5"
+            BuildableName = "EXProtubuf.framework"
+            BlueprintName = "EXProtubuf"
             ReferencedContainer = "container:ProtobufSwift.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "36A042C11D2E4F34007B8216"
-            BuildableName = "ProtobufSwift.app"
-            BlueprintName = "ProtobufSwift"
+            BlueprintIdentifier = "368C59F51D4B92FC00DAF6B5"
+            BuildableName = "EXProtubuf.framework"
+            BlueprintName = "EXProtubuf"
             ReferencedContainer = "container:ProtobufSwift.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -10,12 +10,12 @@ import Foundation
 
 extension NSMutableData
 {
-    func removeBytes(n: Int)
+    func removeBytes(_ n: Int)
     {
         if length < n {
-            replaceBytesInRange(NSMakeRange(0, length), withBytes: nil, length: 0)
+            replaceBytes(in: NSMakeRange(0, length), withBytes: nil, length: 0)
             return
         }
-        replaceBytesInRange(NSMakeRange(0, n), withBytes: nil, length: 0)
+        replaceBytes(in: NSMakeRange(0, n), withBytes: nil, length: 0)
     }
 }
